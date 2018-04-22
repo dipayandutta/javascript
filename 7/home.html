@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basic Object Example </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    
+</head>
+<body>
+    <p id="output"></p>
+</body>
+<script type="text/javascript">
+    function Human(firstName,lastName){
+        this.firstName = firstName;
+        this.lastName  = lastName;
+
+        this.fullName = function(){
+            document.writeln(this.firstName+this.lastName);
+            return this.firstName+this.lastName;
+        }
+    }
+
+    var person1 = new Human("Dipayan","Dutta");
+    var person2 = new Human("James","Bond");
+
+    document.getElementById("output").innerHTML = person1.fullName();
+    document.getElementById("output").innerHTML = person2.fullName();
+
+    Human.prototype.hobby = "cricket";
+    console.log(Human.prototype.hobby);
+
+    Human.prototype.time = function(){
+        console.log("This is a function");
+    }
+    Human.prototype.time();
+</script>
+</html>

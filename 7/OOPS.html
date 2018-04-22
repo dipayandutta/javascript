@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Java Script OOPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var Person = function(firstName,lastName){
+            this.firstName = firstName;
+            this.lastName  = lastName;
+        }
+        Person.prototype.sayHello = function(){
+            console.log("This is the sayHello function"+this.firstName);
+        };
+        var person1 = new Person("Dipayan","Dutta");
+        var person2 = new Person("Briti","Naiya");
+
+        console.log(person1.firstName); // Accessing firstName from object
+        console.log(person1.lastName); // Accessing lastName from object
+        console.log(person2); // Calling person2 Object
+        person1.sayHello();
+      
+    </script>
+</body>
+</html>

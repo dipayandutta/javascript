@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inheritance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+
+        //Define the Person constructor
+        var Person = function(firstName){
+            this.firstName = firstName;
+        };
+
+        Person.prototype.sayHello = function(){
+            console.log("Hello , I am "+this.firstName);
+        }
+
+        //Define the Student constructor
+        function Student(firstName,subject){
+            Person.call(this,firstName);
+            this.subject = subject;
+        }
+
+        // Inheriting the Person in student
+        Student.prototype = Object.create(Person.prototype);
+        Student.prototype.constructor = Student;
+
+        Student.prototype.sayHello = function(){
+            console.log("Hello , I am "+this.firstName +"I am studying "+this.subject);
+        };
+
+        Student.prototype.sayBye = function(){
+            console.log("Bye!");
+        };
+
+        var student1 = new Student("Dipayan","Electronics");
+        student1.sayHello();
+
+        var person1 = new Person("Dipayan");
+        person1.sayHello();
+    </script>
+</body>
+</html>
