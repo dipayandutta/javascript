@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Listner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  
+</head>
+<body>
+    <button id="btn">Button</button>
+    <p id="demo"></p>
+
+    <script type="text/javascript">
+        var x = document.getElementById("btn");
+        x.addEventListener("mouseover",mouseOverFunction);
+        x.addEventListener("click",clickFunction);
+        x.addEventListener("mouseout",mouseOutFunction);
+
+        function mouseOverFunction(){
+            document.getElementById("demo").innerHTML += "Mouse Over Detected!";
+        }
+
+        function clickFunction(){
+            document.getElementById("demo").innerHTML += "click function Detected!";
+        }
+
+        function mouseOutFunction(){
+            document.getElementById("demo").innerHTML += "Mouse Out Function Detected!";
+        }
+    </script>
+</body>
+</html>
