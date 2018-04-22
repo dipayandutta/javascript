@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Clousre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        function func1(){
+            var name = "python";
+            function displayFunc(){
+                console.log(name);
+            }
+            return displayFunc;
+        }
+
+        var func1 = func1();
+        func1();
+    </script>
+</body>
+</html>
